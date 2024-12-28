@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import Slides from "@/components/Slides";
+import Work from "@/components/Work";
 
 export default function Home() {
   return (
@@ -28,10 +29,11 @@ export default function Home() {
           elegance | Turning complex problems into elegant solutions | Meet me,
           the pixel poet.
         </h1>
-        <h1 className={styles.content__about}>
+        {/* <h1 className={styles.content__about}>
           Explore some of my recent Work below or feel free to get in touch
           ¯I_(ツ)_/¯
-        </h1>
+        </h1> */}
+        {/* <Work /> */}
       </div>
     </main>
   );

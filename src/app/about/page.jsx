@@ -14,10 +14,10 @@ export default function Home() {
           </div>
           <div className={styles.inner__container}>
             <p className={styles.content__about}>
-              Hello Amigo I am Rakesh, a virtuoso programmer living in Hyderabad. I'm
-              actively contributing to innovative projects at a well-established
-              tech company, constantly pushing the boundaries of what's possible
-              in the digital realm.
+              Hello Amigo, I am Rakesh, a virtuoso programmer living in
+              Hyderabad. I'm actively contributing to innovative projects at a
+              well-established tech company, constantly pushing the boundaries
+              of what's possible in the digital realm.
             </p>
           </div>
         </section>
@@ -28,8 +28,17 @@ export default function Home() {
           </div>
           <div className={styles.inner__container}>
             <p className={styles.content__about}>
-                → B.Tech Computer Science Engineering
+              → B.Tech Computer Science Engineering
             </p>
+          </div>
+        </section>
+        <section className={styles.section__container}>
+          <div className={styles.inner__container}>
+            <div className={styles.number}>3</div>
+            <p className={styles.content__title}>Experience</p>
+          </div>
+          <div className={styles.inner__container}>
+            <p className={styles.content__about}>→ TeachForIndia</p>
           </div>
         </section>
       </div>
