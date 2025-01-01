@@ -13,19 +13,19 @@ const Header: React.FC = () => {
         </Link>
         <Link
           href={"/"}
-          className="block px-8 py-4 border-r border-r-lines border-b-[4px] border-b-accent-orange text-white hover:text-white"
+          className="block px-10 py-4 border-r border-r-lines border-b-[4px] border-b-accent-orange text-white hover:text-white"
         >
           _hello
         </Link>
         <Link
           href={"/about"}
-          className="block px-8 py-4 border-r border-r-lines hover:text-white"
+          className="block px-10 py-4 border-r border-r-lines hover:text-white"
         >
           _about-me
         </Link>
         <Link
           href={"/projects"}
-          className="block px-8 py-4 border-r border-r-lines hover:text-white"
+          className="block px-10 py-4 border-r border-r-lines hover:text-white"
         >
           _projects
         </Link>
@@ -33,7 +33,7 @@ const Header: React.FC = () => {
       <div>
         <Link
           href={"/contact"}
-          className="block px-6 py-4 border-l border-l-lines hover:text-white"
+          className="block px-10 py-4 border-l border-l-lines hover:text-white"
         >
           _contact_me
         </Link>
