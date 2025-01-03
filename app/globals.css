@@ -5,3 +5,17 @@
 * {
   font-weight: 450;
 }
+
+.custom__scrollbar::-webkit-scrollbar {
+  width: 2px;
+  height: 0px;
+}
+
+.custom__scrollbar::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+
+.custom__scrollbar::-webkit-scrollbar-track {
+  background: #f4f4f4;
+}

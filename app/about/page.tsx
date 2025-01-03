@@ -215,29 +215,39 @@ const About: React.FC = () => {
             <span>contacts</span>
           </button>
           <div className="p-4">
-            <div className="flex items-center gap-2">
+            <a
+              href="mailto:rebbavarapurakesh@gmail.com"
+              className="flex items-center gap-2"
+            >
               <IoMdMail className="text-secondary-muted" />
               <span className="text-secondary-muted">
                 rebbavarapurakesh@gmail.com
               </span>
-            </div>
-            <div className="flex items-center gap-2">
+            </a>
+            <a href="tel:+917288071875" className="flex items-center gap-2">
               <MdLocalPhone className="text-secondary-muted" />
               <span className="text-secondary-muted">+91 7288071875</span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
       <div className="flex-2 w-full grid grid-cols-2">
         <div className="border border-lines">
-          <div className="w-full border-b border-b-lines flex">
-            {activePages.map((activePage, index) => {
+          <div className="custom__scrollbar w-full border-b border-b-lines flex overflow-auto">
+            {activePages.map((page, index) => {
               return (
                 <div
                   key={`page_${index}`}
-                  className=" px-4 py-2 flex items-center gap-10 text-secondary-muted border-r border-r-lines"
+                  className={`${
+                    activePage === page ? "border-b border-accent-orange" : ""
+                  } px-4 py-2 w-36 flex items-center justify-between text-secondary-muted border-r border-r-lines`}
                 >
-                  <span>{activePage.name}</span>
+                  <button
+                    onClick={() => onPageClick(page)}
+                    className="text-sm w-full flex-1 whitespace-nowrap"
+                  >
+                    {page.name}
+                  </button>
                   <button onClick={() => removeActivePage(index)}>x</button>
                 </div>
               );
