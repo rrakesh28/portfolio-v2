@@ -9,7 +9,7 @@ const Contact: React.FC = () => {
     <div className="h-full flex">
       <div className="w-[22rem] border-r border-r-lines">
         <div className="mt-4">
-          <button className="w-full px-4 py-2 flex items-center gap-2 text-white border-b border-b-lines border-t border-t-lines">
+          <button className="w-full px-4 py-2 flex items-center gap-2 text-white border-b border-b-lines">
             <TiArrowSortedDown />
             <span>contacts</span>
           </button>
@@ -60,8 +60,62 @@ const Contact: React.FC = () => {
               <button>x</button>
             </div>
           </div>
-          <div>
-            <p>asdf</p>
+          <div className="flex justify-center">
+            <form className="w-[30rem] mt-[10rem] ">
+              <div className="mb-4">
+                <label
+                  htmlFor="name"
+                  className="block text-secondary-muted font-medium mb-2"
+                >
+                  _name:
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  className="w-full px-4 py-2 bg-primary-light border border-lines rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="email"
+                  className="block text-secondary-muted font-medium mb-2"
+                >
+                  _email:
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full px-4 py-2 bg-primary-light border border-lines rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
+              </div>
+
+              <div className="mb-4">
+                <label
+                  htmlFor="message"
+                  className="block text-secondary-muted font-medium mb-2"
+                >
+                  _message:
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  className="w-full px-4 py-2 bg-primary-light border border-lines rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                ></textarea>
+              </div>
+
+              <div>
+                <button
+                  type="submit"
+              className="text-white bg-secondary-blue px-4 py-2 rounded-lg"
+                >
+                  submit-messgae
+                </button>
+              </div>
+            </form>
           </div>
         </div>
         <div className="border-lines"></div>
