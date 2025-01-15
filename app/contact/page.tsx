@@ -1,15 +1,37 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { IoMdMail } from "react-icons/io";
 import { MdLocalPhone } from "react-icons/md";
 import { TiArrowSortedDown } from "react-icons/ti";
 import { FaLink } from "react-icons/fa6";
 
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
+import { nightOwl } from "react-syntax-highlighter/dist/esm/styles/prism";
+
 const Contact: React.FC = () => {
+  const [name, setName] = useState<string>("");
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
+
+  const getFormattedDate = (): string => {
+    const options: Intl.DateTimeFormatOptions = {
+      weekday: "short",
+      day: "2-digit",
+      month: "short",
+    };
+    return new Date().toLocaleDateString("en-US", options);
+  };
+
+  const submit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    alert("Message sent successfully!");
+  }
+
   return (
     <div className="h-full flex">
       <div className="w-[22rem] border-r border-r-lines">
         <div className="mt-4">
-          <button className="w-full px-4 py-2 flex items-center gap-2 text-white border-b border-b-lines">
+          <button className="w-full px-4 flex items-center gap-2 text-white border-b border-b-lines">
             <TiArrowSortedDown />
             <span>contacts</span>
           </button>
@@ -61,7 +83,7 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="flex justify-center">
-            <form className="w-[30rem] mt-[10rem] ">
+            <form onSubmit={submit} className="w-[30rem] mt-[10rem] ">
               <div className="mb-4">
                 <label
                   htmlFor="name"
@@ -73,7 +95,9 @@ const Contact: React.FC = () => {
                   type="text"
                   id="name"
                   name="name"
-                  className="w-full px-4 py-2 bg-primary-light border border-lines rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  className="w-full text-white px-4 py-2 bg-primary-light border border-lines rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
               </div>
 
@@ -88,7 +112,9 @@ const Contact: React.FC = () => {
                   type="email"
                   id="email"
                   name="email"
-                  className="w-full px-4 py-2 bg-primary-light border border-lines rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full text-white px-4 py-2 bg-primary-light border border-lines rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 />
               </div>
 
@@ -103,14 +129,16 @@ const Contact: React.FC = () => {
                   id="message"
                   name="message"
                   rows={4}
-                  className="w-full px-4 py-2 bg-primary-light border border-lines rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  value={message}
+                  onChange={(e) => setMessage(e.target.value)}
+                  className="w-full text-white px-4 py-2 bg-primary-light border border-lines rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400"
                 ></textarea>
               </div>
 
               <div>
                 <button
                   type="submit"
-              className="text-white bg-secondary-blue px-4 py-2 rounded-lg"
+                  className="text-white bg-secondary-blue px-4 py-2 rounded-lg"
                 >
                   submit-messgae
                 </button>
@@ -118,7 +146,33 @@ const Contact: React.FC = () => {
             </form>
           </div>
         </div>
-        <div className="border-lines"></div>
+        <div className="border-lines">
+          <SyntaxHighlighter
+            language="javascript"
+            showLineNumbers={true}
+            style={nightOwl}
+            customStyle={{
+              fontSize: "16px",
+              height: "500px",
+              width: "600px",
+              overflow: "hidden",
+            }}
+          >
+            {`
+const button = document.querySelector('#sendBtn');
+
+const message = {
+	name: "${name}",
+	email: "${email}",
+	message: "${message}",
+	date: "${getFormattedDate()}",
+}
+
+button.addEventListener('click', () => {
+	form.send(message);
+})`}
+          </SyntaxHighlighter>
+        </div>
       </div>
     </div>
   );
