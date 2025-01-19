@@ -21,6 +21,7 @@ import Reading from "@/components/Reading";
 import Movies from "@/components/Movies";
 import HighSchool from "@/components/HighSchool";
 import University from "@/components/University";
+import CodeSnippetsCarousel from "@/components/CodeSnippetsCarousel";
 
 type Page<T = {}> = {
   name: string;
@@ -255,7 +256,9 @@ const About: React.FC = () => {
           </div>
           {activePage && activePage.component && <activePage.component />}
         </div>
-        <div className="border-lines"></div>
+        <div className="border-lines">
+          <CodeSnippetsCarousel />
+        </div>
       </div>
     </div>
   );

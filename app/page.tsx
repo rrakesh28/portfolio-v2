@@ -1,5 +1,6 @@
 import CodeSnippetsCarousel from "@/components/CodeSnippetsCarousel";
 import Image from "next/image";
+import Game from "@/components/Game";
 
 export default function Home() {
   return (
@@ -35,7 +36,7 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-[url('/assets/images/home_bg.png')] bg-contain h-full grid place-items-center">
-        <CodeSnippetsCarousel />
+      <Game />
       </div>
     </div>
   );
