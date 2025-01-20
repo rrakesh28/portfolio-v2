@@ -1,17 +1,11 @@
 "use client";
-import AboutMe from "@/components/AboutMe";
-import Drawing from "@/components/Drawing";
-import HighSchool from "@/components/HighSchool";
-import Movies from "@/components/Movies";
 import ProjectCard from "@/components/ProjectCard";
-import Reading from "@/components/Reading";
-import University from "@/components/University";
 import { Project } from "@/utils/types";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { TiArrowSortedDown } from "react-icons/ti";
 
 const Projects: React.FC = () => {
-  const projects: Project[] = [
+  const projects: Project[] = useMemo(() => [
     {
       year: "2025",
       title: "AI Assistant",
@@ -66,7 +60,7 @@ const Projects: React.FC = () => {
       project_link: null,
       github_link: "https://github.com/username/game-engine",
     },
-  ];
+  ],[]);
 
   const technologies = ["HTML", "CSS", "JavaScript", "Django", "Laravel"];
 
@@ -86,7 +80,7 @@ const Projects: React.FC = () => {
         selectedTechnologies.every((tech) => project.built_with.includes(tech))
       )
     );
-  }, [selectedTechnologies]);
+  }, [selectedTechnologies,projects]);
 
   const onCheck = (technology: string) => {
     if (selectedTechnologies.includes(technology)) {
@@ -114,7 +108,7 @@ const Projects: React.FC = () => {
                   id={`checkbox-${index}`}
                   value={technology}
                   className="w-5 h-5 text-red-600 bg-gray-100 border-gray-300 rounded focus:ring-2"
-                  onChange={(e) => {
+                  onChange={() => {
                     onCheck(technology);
                   }}
                 />
@@ -154,7 +148,7 @@ const Projects: React.FC = () => {
               <div key={`project_${index}`}>
                 <div className="flex gap-2 items-center">
                   <p className="text-secondary-blue">Project ${index + 1}</p>
-                  <p className="text-secondary-muted">// ${project.title}</p>
+                  <p className="text-secondary-muted">{`// ${project.title}`}</p>
                 </div>
                 <ProjectCard project={project} />
               </div>

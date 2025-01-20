@@ -1,5 +1,3 @@
-import CodeSnippetsCarousel from "@/components/CodeSnippetsCarousel";
-import Image from "next/image";
 import Game from "@/components/Game";
 
 export default function Home() {
@@ -16,10 +14,10 @@ export default function Home() {
           </div>
           <div className="mt-10">
             <p className="text-secondary-muted">
-              // complete the game to continue
+              {"// complete the game to continue"}
             </p>
             <p className="text-secondary-muted">
-              // you can also see it on my github page
+              {"// you can also see it on my github page"}
             </p>
             <p>
               {" "}
@@ -36,7 +34,7 @@ export default function Home() {
         </div>
       </div>
       <div className="bg-[url('/assets/images/home_bg.png')] bg-contain h-full grid place-items-center">
-      <Game />
+        <Game />
       </div>
     </div>
   );
