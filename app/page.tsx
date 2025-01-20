@@ -9,9 +9,9 @@ export default function Home() {
         <div>
           <div className="text-white">
             <p className="text-balance">Hi all. I am</p>
-            <p className="text-headline">Micheal Weaver</p>
+            <p className="text-headline">Rebbavarapu Rakesh</p>
             <p className="text-subheadline text-secondary-blue">
-              {">"} Front-end developer
+              {">"} Software Engineer
             </p>
           </div>
           <div className="mt-10">

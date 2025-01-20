@@ -13,7 +13,7 @@ const Header: React.FC = () => {
           href={"/"}
           className="block pl-4 pr-16 py-4 border-r border-r-lines hover:text-white"
         >
-          micheal-weaver
+          rebbavarapu-rakesh
         </Link>
         <Link
           href={"/"}

@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
   const submit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     alert("Message sent successfully!");
-  }
+  };
 
   return (
     <div className="h-full flex">
@@ -57,15 +57,24 @@ const Contact: React.FC = () => {
             <span>find-me-also-in</span>
           </button>
           <div className="p-4">
-            <a href="https://linkedin.com" className="flex items-center gap-2">
+            <a
+              href="https://www.linkedin.com/in/rakeshrebbavarapu/"
+              className="flex items-center gap-2"
+            >
               <FaLink className="text-secondary-muted" />
               <span className="text-secondary-muted">LinkedIn</span>
             </a>
-            <a href="https://github.com" className="flex items-center gap-2">
+            <a
+              href="https://github.com/rrakesh28"
+              className="flex items-center gap-2"
+            >
               <FaLink className="text-secondary-muted" />
               <span className="text-secondary-muted">Github</span>
             </a>
-            <a href="https://twitter.com" className="flex items-center gap-2">
+            <a
+              href="https://x.com/theamigoooooo"
+              className="flex items-center gap-2"
+            >
               <FaLink className="text-secondary-muted" />
               <span className="text-secondary-muted">Twitter</span>
             </a>
