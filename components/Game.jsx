@@ -17,6 +17,11 @@ const Game = () => {
     setScore(0);
     setDirection("right");
     setGameStatus(GameStatus.PLAYING);
+    setSnake([
+      { x: 100, y: 50 },
+      { x: 95, y: 50 },
+      { x: 90, y: 50 },
+    ])
   };
 
   const canvasRef = useRef();
