@@ -21,7 +21,7 @@ const Game = () => {
       { x: 100, y: 50 },
       { x: 95, y: 50 },
       { x: 90, y: 50 },
-    ])
+    ]);
   };
 
   const canvasRef = useRef();
@@ -55,7 +55,8 @@ const Game = () => {
 
       snake.forEach((snakePart, index) => {
         const progress = index / (snake.length - 1);
-        const alpha = minAlpha + progress * (maxAlpha - minAlpha);
+        // const alpha = minAlpha + progress * (maxAlpha - minAlpha);
+        const alpha = Math.max(1 - index * 0.02, 0.3);
 
         const [r, g, b] = colorStart.map(
           (c, i) => c + progress * (colorEnd[i] - c)
